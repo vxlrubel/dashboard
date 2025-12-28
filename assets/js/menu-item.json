@@ -1,0 +1,31 @@
+[
+   {
+      "label": "Dashboard",
+      "link": "#",
+      "icon": "dashboard",
+      "submenu": [
+         { "label": "Home", "link": "#" },
+         { "label": "Update", "link": "#" }
+      ]
+   },
+   {
+      "label": "Posts",
+      "link": "#",
+      "icon": "dashboard",
+      "submenu": [
+         { "label": "All Posts", "link": "#" },
+         { "label": "Add New", "link": "#" },
+         { "label": "Category", "link": "#" },
+         { "label": "Tags", "link": "#" }
+      ]
+   },
+   {
+      "label": "Pages",
+      "link": "#",
+      "icon": "dashboard",
+      "submenu": [
+         { "label": "All Pages", "link": "#" },
+         { "label": "Add New", "link": "#" }
+      ]
+   }
+]
