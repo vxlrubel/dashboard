@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dashboard</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+         rel="stylesheet" />
+      <link rel="stylesheet" href="./assets/css/style.css" />
+   </head>
+   <body>
+      <div class="wraper">
+         <header class="sidebar" id="header">
+            <a href="#"> BrandLogo </a>
+            <ul class="menu">
+               <li v-for="(item, index) in menu" :key="index">
+                  <a
+                     :href="item.link"
+                     class="menu-link"
+                     :style="{ '--link-animate-delay': (index + 1) * 100 + 'ms' }">
+                     <span v-html="icons[item.icon]" class="link-icon"></span>
+                     <span>{{item.label}}</span>
+                     <span v-html="icons['angle_right']"></span>
+                  </a>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    
+                  <ul class="sub-menu" v-if="item?.submenu.length">
+                     <li v-for="(inneritem, i) in item.submenu" :key="i">
+                        <a
+                           class="inner-link"
+                           :href="inneritem.link"
+                           :style="{ '--inlink-animate-delay': (i + 1) * 100 + 'ms' }"
+                           >{{inneritem.label}}</a
+                        >
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </header>
 
-    <header>
-        
-    </header>
-
-    <script src="./assets/js/vue.global.js"></script>
-    <script src="./assets/js/scripts.js"></script>
-</body>
+         <main class="main">
+            <div class="topbar">
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 960 960"
+                  fill="currentColor"
+                  height="24px"
+                  width="24px">
+                  <path
+                     d="M120-240v-80h520v80H120Zm664-40L584-480l200-200 56 56-144 144 144 144-56 56ZM120-440v-80h400v80H120Zm0-200v-80h520v80H120Z" />
+               </svg>
+            </div>
+            <div class="page-content">
+               <h2 class="page-title">Page Title</h2>
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
+               libero cumque amet impedit iure eligendi. Omnis praesentium vitae
+               reprehenderit voluptates id quis nulla dicta nesciunt sequi
+               ducimus? Iusto, nulla. Natus.
+            </div>
+         </main>
+      </div>
+      <script src="./assets/js/vue.global.js"></script>
+      <script src="./assets/js/scripts.js"></script>
+   </body>
 </html>
