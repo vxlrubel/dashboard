@@ -1,0 +1,12 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+html{
+    line-height: 1;
+}
+body{
+    text-align: left;
+    font-size: 1em;
+    background-color: #fff;
+    color: #444;
+}
